@@ -19,3 +19,7 @@
 - By default, the playlist is played once. If you want to repeat the whole playlist, press the 'repeat' button which is next to the 'next song' button. If you want to repeat only a single song, press the same icon once again. You should see the 'repeat with 1' icon. To switch off any repetitions, press again the same button to see the 'repeat' button turned grey.
   
 - To regulate the sound volume, please use the volume icon or volume slider.
+
+## PREREQUSITES:
+- make sure you installed 'ffpyplayer', otherwise the program will not work correcly
+- 
