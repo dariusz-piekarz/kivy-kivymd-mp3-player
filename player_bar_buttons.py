@@ -138,9 +138,11 @@ class Buttons(BoxLayout):
                 self.audio.loop = self.song_loop
 
             else:
+ 
                 self.audio.stop()
                 self.audio = SoundLoader.load(path)
                 Shared.update_details_data(instance)
+                self.audio.volume = self.slider.value / 100
 
             Shared.get_total_length(convert_time(self.audio.length))
             Shared.max_slider_value(self.audio.length)
@@ -148,6 +150,7 @@ class Buttons(BoxLayout):
             if self.iterator == 0:
                 self.audio.play()
                 Clock.schedule_interval(self.update_time_label, 0.1)
+        self.audio.bind(on_stop=self.on_stop)
 
     def prev(self, instance):
         self.current_time = 0.0
@@ -168,8 +171,9 @@ class Buttons(BoxLayout):
 
             else:
                 self.audio.stop()
-                Shared.update_details_data(instance)
                 self.audio = SoundLoader.load(path)
+                Shared.update_details_data(instance)
+                self.audio.volume = self.slider.value / 100
 
             Shared.get_total_length(convert_time(self.audio.length))
             Shared.max_slider_value(self.audio.length)
@@ -177,6 +181,7 @@ class Buttons(BoxLayout):
             if self.iterator == 0:
                 self.audio.play()
                 Clock.schedule_interval(self.update_time_label, 0.1)
+            self.audio.bind(on_stop=self.on_stop)
 
     def repeat(self, iterator, instance):
         if iterator % 3 == 0:
@@ -191,7 +196,7 @@ class Buttons(BoxLayout):
 
     def on_stop(self, instance):
 
-        if round(self.audio.length-self.current_time) < 0.5 and not self.song_loop:
+        if round(self.audio.length-self.current_time) < 0.5:
             self.playing = False
 
         if not self.playing:
@@ -204,6 +209,7 @@ class Buttons(BoxLayout):
                     Shared.current_choice += 1
                     self.audio = SoundLoader.load(path)
                     Shared.update_details_data(instance)
+                    self.audio.volume = self.slider.value / 100
                     Shared.get_total_length(convert_time(self.audio.length))
                     Shared.max_slider_value(self.audio.length)
                     self.playing = True
@@ -214,6 +220,7 @@ class Buttons(BoxLayout):
                     path = Shared.fields.at[0, "Path"]
                     self.audio = SoundLoader.load(path)
                     Shared.update_details_data(instance)
+                    self.audio.volume = self.slider.value / 100
                     Shared.get_total_length(convert_time(self.audio.length))
                     Shared.max_slider_value(self.audio.length)
                     if self.list_loop:
@@ -227,6 +234,17 @@ class Buttons(BoxLayout):
                         Shared.pg_bar_clear()
                         Shared.timer_beginning(convert_time(self.audio.length))
                     self.audio.bind(on_stop=self.on_stop)
+            elif len(Shared.fields) > 0 and self.song_loop:
+                self.playing = True
+                Shared.update_details_data(instance)
+                self.audio.volume = self.slider.value / 100
+                Shared.get_total_length(convert_time(self.audio.length))
+                Shared.max_slider_value(self.audio.length)
+                self.audio.play()
+                self.audio.bind(on_stop=self.on_stop)
+                
+                
+    
 
     def update_time_label(self, dt):
 
