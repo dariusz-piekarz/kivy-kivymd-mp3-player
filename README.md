@@ -22,4 +22,4 @@
 
 ## PREREQUSITES:
 - make sure you installed 'ffpyplayer', otherwise the program will not work correcly
-- 
+- in line 23 of "choose_song_core.py", change a 'path' variable to a directory where you keep your music or any local folder you like
