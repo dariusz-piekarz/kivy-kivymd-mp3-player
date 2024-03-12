@@ -103,7 +103,7 @@ class Buttons(BoxLayout):
                 Shared.get_total_length(convert_time(self.audio.length))
                 Shared.max_slider_value(self.audio.length)
                 self.audio.volume = self.slider.value / 100
-                self.audio.loop = self.song_loop
+                self.audio.loop = self.song_loop 
 
             self.audio.bind(on_stop=self.on_stop)
 
