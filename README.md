@@ -1,6 +1,6 @@
-# MP3 Player using Kivy and Kivy MD
+# MP3 Player using **Kivy** and **Kivy MD**
 
-## Guidelines for MP3 Player:
+## Guidelines for *MP3 Player*:
 
 - In the right center corner, there is a FileManager. To add a file, double-click on the icon of the selected song and press the '+' button in the right bottom corner. The song should appear in the table in the middle.
   
