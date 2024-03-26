@@ -1,4 +1,4 @@
-# MP3 Player using **Kivy** and **Kivy MD**
+# MP3 Player using `Kivy` and `Kivy MD`
 
 ## Guidelines for *MP3 Player*:
 
@@ -21,5 +21,5 @@
 - To regulate the sound volume, please use the volume icon or volume slider.
 
 ## PREREQUSITES:
-- make sure you installed 'ffpyplayer', otherwise the program will not work correcly
-- in line 23 of "choose_song_core.py", change a 'path' variable to a directory where you keep your music or any local folder you like
+- make sure you installed `ffpyplayer`, otherwise the program will not work correcly
+- in line `23` of `choose_song_core.py`, change a `path` variable to a directory where you keep your music or any local folder you like
