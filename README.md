@@ -1,4 +1,5 @@
 # MP3 Player using `Kivy` and `Kivy MD`
+![mp3_player](https://github.com/dariusz-piekarz/kivy-kivymd-mp3-player/assets/162720843/4064795d-c23b-41ff-9b6a-e104a5aca5fb)
 
 ## Guidelines for *MP3 Player*:
 
