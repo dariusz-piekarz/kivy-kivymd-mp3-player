@@ -1,6 +1,6 @@
 # MP3 Player using `Kivy` and `Kivy MD`
 
-![MP3 player layout](C:\Users\DXD\Desktop\mp3_.jpg.png)
+![MP3 player layout](C:\Users\DXD\Desktop\mp3_player.jpg)
 
 ## Guidelines for *MP3 Player*:
 
